@@ -2,7 +2,7 @@ const suma = (a,b) =>{
     // "x" e "y" son números
     // Suma "x" e "y" juntos y devuelve el valor
     // Tu código
-    return a+b;
+    
 }
 
 const sonIguales = (x, y)=>{
