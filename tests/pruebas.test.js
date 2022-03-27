@@ -22,7 +22,7 @@ const {
     operacionMatematica,
     filter
     
-} = require('../tareaSolucion');
+} = require('../tarea');
 
 
 describe('suma(x, y)', function() {
