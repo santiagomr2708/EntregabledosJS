@@ -1,14 +1,18 @@
 const suma = (a,b) =>{
-    // "x" e "y" son números
-    // Suma "x" e "y" juntos y devuelve el valor
-    // Tu código
+    /**
+     * a y b son los parámetros de entrada.
+     * La función debe devolver la suma de los parámetros de entrada
+     * Debes generar el código para que la función haga lo solicitado.
+     */
+    
     
 }
 
 const sonIguales = (x, y)=>{
     // Devuelve "true" si "x" e "y" son iguales
     // De lo contrario, devuelve "false"
-    // Tu código:
+    // Debes generar el código para que la función haga lo solicitado.
+
     
 }
 
@@ -19,11 +23,16 @@ function tienenMismaLongitud(str1, str2) {
   }
 
   function esPositivo(numero) {
-    //La función va a recibir un entero. Devuelve como resultado una cadena de texto que indica si el número es positivo o negativo. 
-    //Si el número es positivo, devolver ---> "Es positivo"
-    //Si el número es negativo, devolver ---> "Es negativo"
-    //Si el número es 0, devuelve false
-    // Tu código:
+    /**
+     * la función recibe como parámetro de entrada un número entero.
+     * Devuelve como resultado una cadena de texto que indica si el 
+     * número es positivo o negativo. 
+     * Si el número es positivo, devolver ---> "Es positivo"
+     * Si el número es negativo, devolver ---> "Es negativo"
+     * Si el número es 0, devuelve false
+     * Tu código:
+     */
+  
     
   }
 
@@ -47,20 +56,27 @@ function tienenMismaLongitud(str1, str2) {
   }
 
   const devolverPrimerElemento = (array) => {
-    // Devuelve el primer elemento de un array
+    /**
+     * La función recibe como parámetro de entrada un arreglo.
+     * La función debe regresar el primer elemento del arreglo
+     */
     // Tu código:
    
   }
 
   const agregarItemAlFinalDelArray = (array, elemento) =>{
-    // Añade el "elemento" al final del array
-    // y devuelve el array
+    /**
+     * La función recibe dos parámetros de entrada, un arreglo y un elemento
+     * Se debe añadir el elemento al final del arreglo y luego regresar el arreglo
+     */
     // Tu código:
   }
 
   const nuevoUsuario = (nombre, email, password) => {
-    // Crea un nuevo objeto con las propiedades coincidiendo con los argumentos que se pasan a la función
-    // Devuelve el objeto
+    /**
+     * Crea un nuevo objeto con las propiedades coincidiendo con los argumentos
+     * que se pasan a la función.  Devuelve el objeto
+     */
     // Tu código:
   }
 
@@ -83,9 +99,7 @@ function tienenMismaLongitud(str1, str2) {
     // Agrega "nuevoAmigo" al final de ese array
     // Devuelve el objeto "usuario"
     // // Tu código:
-    // var user = {
-    //   amigos: ['Pedro', 'Sebastian']
-    // }
+  
    
   }
 
@@ -105,27 +119,25 @@ function tienenMismaLongitud(str1, str2) {
     // Suma todos los likes de todos los objetos "post"
     // Devuelve la suma
     // Tu código:
-    // let usuario = {
-    //   posts: [{
-    //     likes: 4
-    //   }]
-    // };
+    
 
   }
 
+  
+
+class Persona {
   // ---------------------------------------------------------------------------//
   //Crea el constructor de la clase "Persona"
   //Debe tener las propiedades: "nombre", "apellido", "edad" y "domicilio"
   //Debe tener un método llamado "detalle" que nos devuelve un objeto con 
   //las propiedades de la persona y sus valores.
+  //un ejemplo del objeto es el siguiente
   //Ej: { 
     //   Nombre: 'Juan',
     //   Apellido: 'Perez',
     //   Edad: 22,
     //   Domicilio: 'Saavedra 123'
     //  }
-
-class Persona {
     constructor(/*Escribir los argumentos que recibe el constructor*/) {
       // Crea el constructor:
 
@@ -153,7 +165,7 @@ const copiarEach = (array, cb) =>{
   }
 
   const operacionMatematica =(n1, n2, cb) =>{
-    //Vamos a recibir una función que realiza una operación matemática junto con dos números.
+    //Vamos a recibir una función (cb) que realiza una operación matemática junto con dos números.
     //Devolver la función pasándole como argumentos los números recibidos.
     //Tu código:
   }

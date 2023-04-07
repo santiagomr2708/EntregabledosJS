@@ -38,6 +38,8 @@ describe('sonIguales(x, y)', function() {
       expect(sonIguales(15, 15)).toBe(true);
       expect(sonIguales(90, 50)).toBe(false);
       expect(sonIguales('test', 'test')).toBe(true);
+      expect(sonIguales(true, true)).toBe(true);
+      expect(sonIguales(14.0, 14,0)).toBe(true);
     });
 });
 
