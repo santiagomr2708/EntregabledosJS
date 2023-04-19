@@ -1,3 +1,5 @@
+const { forEach } = require("lodash")
+
 const suma = (a,b) =>{
     /**
      * a y b son los parámetros de entrada.
@@ -5,7 +7,7 @@ const suma = (a,b) =>{
      * Debes generar el código para que la función haga lo solicitado.
      */
     
-    
+    return a + b
 }
 
 const sonIguales = (x, y)=>{
@@ -13,13 +15,21 @@ const sonIguales = (x, y)=>{
     // De lo contrario, devuelve "false"
     // Debes generar el código para que la función haga lo solicitado.
 
-    
+     if(x == y)
+       return true
+
+     return false
 }
 
 function tienenMismaLongitud(str1, str2) {
     // Devuelve "true" si las dos strings tienen la misma longitud
     // De lo contrario, devuelve "false"
     // Tu código:
+
+     if(str2.length == str1.length)
+       return true
+
+     return false
   }
 
   function esPositivo(numero) {
@@ -32,7 +42,14 @@ function tienenMismaLongitud(str1, str2) {
      * Si el número es 0, devuelve false
      * Tu código:
      */
-  
+
+    if(numero == 0)
+      return false
+    else if(numero > 0)
+      return 'Es positivo'
+
+
+    return 'Es negativo'
     
   }
 
@@ -44,7 +61,27 @@ function tienenMismaLongitud(str1, str2) {
     //En caso que el color recibido sea "orange", devuelve --> "This is orange"
     //Caso default: devuelve --> "Color not found"
     //Usar el statement Switch.
+
+    switch(color){
+      case 'blue':
+        return 'This is blue'
+          break;
+
+      case 'red':
+        return 'This is red'
+          break;
+      
+      case 'green':
+        return 'This is green'
+          break;
     
+     case 'orange':
+        return 'This is orange'
+         break;
+
+      default:
+        return 'Color not found'
+    }
   }
 
   const fizzBuzz = (numero)  => {
@@ -52,6 +89,14 @@ function tienenMismaLongitud(str1, str2) {
     // Si "numero" es divisible entre 5, devuelve "buzz"
     // Si "numero" es divisible entre 3 y 5 (ambos), devuelve "fizzbuzz"
     // De lo contrario, devuelve el numero
+    if(numero%3 == 0 && numero%5 ==0)
+      return 'fizzbuzz'
+    else if(numero%3 == 0)
+      return 'fizz'
+    else if(numero%5 == 0)
+      return 'buzz'
+
+    return numero
     
   }
 
@@ -61,6 +106,8 @@ function tienenMismaLongitud(str1, str2) {
      * La función debe regresar el primer elemento del arreglo
      */
     // Tu código:
+
+    return array[0]
    
   }
 
@@ -70,6 +117,9 @@ function tienenMismaLongitud(str1, str2) {
      * Se debe añadir el elemento al final del arreglo y luego regresar el arreglo
      */
     // Tu código:
+    array.push(elemento);
+    return   array
+
   }
 
   const nuevoUsuario = (nombre, email, password) => {
@@ -78,6 +128,15 @@ function tienenMismaLongitud(str1, str2) {
      * que se pasan a la función.  Devuelve el objeto
      */
     // Tu código:
+
+    let newUser ={
+      nombre: nombre,
+      email: email,
+      password: password,
+
+    };
+
+    return newUser 
   }
 
   const verificarPassword = (usuario, password) => {
@@ -85,12 +144,22 @@ function tienenMismaLongitud(str1, str2) {
     // Devuelve "true" si coinciden
     // De lo contrario, devuelve "false"
     // // Tu código:
+
+    if (usuario.password == password) {
+      return true
+    }
+
+    return false
   }
 
   const actualizarPassword =(usuario, nuevaPassword) => {
     // Reemplaza la contraseña existente en el objeto "usuario" con el valor de "nuevaPassword"
     // Devuelve el objeto
     // Tu código:
+
+    usuario.password = nuevaPassword;
+
+    return usuario
     
   }
 
@@ -100,7 +169,9 @@ function tienenMismaLongitud(str1, str2) {
     // Devuelve el objeto "usuario"
     // // Tu código:
   
-   
+   usuario.amigos.push(nuevoAmigo);
+
+   return usuario
   }
 
   const pasarUsuarioAPremium = usuarios => {
@@ -109,7 +180,12 @@ function tienenMismaLongitud(str1, str2) {
     // Define cada propiedad "esPremium" de cada objeto como "true"
     // Devuelve el array de usuarios
     // Tu código:
+
+    for (let i = 0; i < usuarios.length; i++) {
+      usuarios[i].esPremium = true; 
+    }
     
+    return usuarios
   }
 
   const sumarLikesDeUsuario = usuario => {
@@ -120,7 +196,13 @@ function tienenMismaLongitud(str1, str2) {
     // Devuelve la suma
     // Tu código:
     
+    let suma = 0;
 
+    for (let i = 0; i < usuario.posts.length; i++) {
+      suma += usuario.posts[i].likes  
+    }
+
+    return suma
   }
 
   
@@ -138,9 +220,22 @@ class Persona {
     //   Edad: 22,
     //   Domicilio: 'Saavedra 123'
     //  }
-    constructor(/*Escribir los argumentos que recibe el constructor*/) {
-      // Crea el constructor:
+    constructor(nombre, apellido, edad, domicilio) {
+      this.nombre = nombre;
+      this.apellido = apellido;
+      this.edad = edad;
+      this.domicilio = domicilio;
+    }
+                                                    //////////////////////////15
+    detalle(){
+      const persona={
+        Nombre: this.nombre,
+        Apellido: this.apellido,
+        Edad: this.edad,
+        Domicilio: this.domicilio,
+      }
 
+      return persona
     }
 }
 
@@ -148,6 +243,11 @@ const crearInstanciaPersona = (nombre, apellido, edad, dir)=>{
     //Con esta función vamos a crear una nueva persona a partir de nuestro constructor de persona (creado en el ejercicio anterior)
     //Recibirá los valores "Juan", "Perez", 22, "Saavedra 123" para sus respectivas propiedades
     //Devolver la nueva persona creada
+
+    const persona = new Persona(nombre, apellido, edad, dir);
+
+    return persona
+
     
 }
 
@@ -155,12 +255,23 @@ const sumarArray = (numeros, cb) =>{
     // Suma todos los números enteros (int/integers) de un array ("numeros")
     // Pasa el resultado a `cb`
     // No es necesario devolver nada
+
+    let sumar = 0;
+     numeros.forEach(element => {
+       sumar += element;
+     });
+
+    cb(sumar);
 }
 
 const copiarEach = (array, cb) =>{
     // Itera sobre la matriz "array" y pasa los valores a cb uno por uno
     // Pista: Estarás invocando a `cb` varias veces (una por cada valor en el array)
     // no tienes que devolver nada
+
+    array.forEach(element => {
+      cb(element);
+    });
     
   }
 
@@ -168,19 +279,31 @@ const copiarEach = (array, cb) =>{
     //Vamos a recibir una función (cb) que realiza una operación matemática junto con dos números.
     //Devolver la función pasándole como argumentos los números recibidos.
     //Tu código:
+
+    cb(n1,n2)
+    /////////////////////////////////////////////////////////////////////
   }
 
   function filter(array) {
     //Filtrar todos los elementos del array que comiencen con la letra "a".
     //Devolver un nuevo array con los elementos que cumplen la condición
     //Tu código:
+
+    let newArray = [];
+    array.forEach(element => {
+      if (element[0] == 'a') {
+        newArray.push(element)
+      }
+    });
+
+    return newArray
   } 
 
 
   /**
  * Por favor no borrar el código que hay de aquí en adelante.
  * Este código sirve para ejecutar las pruebas de la solución hallada para cada
- * una de las funciones creadas.
+ * una de las funciones creadas (20).
  */
 module.exports = {
     suma,
